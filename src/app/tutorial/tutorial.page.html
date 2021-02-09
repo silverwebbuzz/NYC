@@ -1,0 +1,32 @@
+<ion-content padding>
+  <!-- <ion-grid class="img-logo-grid">
+    <ion-row>
+      -- <img src="../../assets/imgs/white-logo.png"> --
+      <h1 class="page-title">NYCWN</h1>
+    </ion-row>
+  </ion-grid> -->
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let slide of slidesPage">
+      <ion-card>
+        <img [src]="slide.image" class="slide-image" />
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.description"></p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <!-- <div class="swiper-pagination"></div> -->
+ 
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-button expand="full" shape="round" fill="outline" (click)="gotologinPage()">Login</ion-button>
+      </ion-col>
+      <ion-col col-6>
+        <ion-button expand="full" shape="round" color="primary" (click)="gotoregistrationPage()">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

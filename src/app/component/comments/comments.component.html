@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary" text-center>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" class="btn-close" (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Comments
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modal-components">
+
+  <div *ngIf="posts.length === 0" >
+      <p text-center style="font-size:18px !important;">
+          Your Comment Box is empty
+      </p>
+  </div>
+  
+  <div *ngFor="let post of posts; let i=index;">
+  <ion-row >
+    <ion-col size="2"  >
+      <img [src]="post.avtar" class="profile-img" />
+    </ion-col>
+    <ion-col size="10">
+      <ion-row>
+        <ion-label class="user-label" [color]="user_id == post.author.ID ? 'primary' : ''">
+          {{post.username}}
+        </ion-label>
+        <ion-label class="comments-label">
+          {{post.content}}
+        </ion-label>
+        <div class="img-div" *ngIf="post.peepso_photo_comments != null">
+          <img [src]="post.peepso_photo_comments.m_s" class="img-card" />
+        </div>
+        <ion-label class="time-label">{{post.activity}}</ion-label>
+        <ion-button class="btn-like" fill="clear" *ngIf="!post.like" (click)="likeComment(i,post.comment_id)">Like</ion-button>
+        <ion-button class="btn-like" fill="clear" *ngIf="post.like" (click)="dislikeComment(i,post.comment_id)">Unlike</ion-button>
+        <ion-button (click)="openModal(post.comment_id, post)" class="btn-reply" fill="clear">Reply</ion-button>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>
+
+<ion-footer class="component-footer">
+  <div class="hr"></div>
+  <ion-item lines="none" class="footer-item">
+    <img [src]="user_url" class="profile-img" style="border-radius: 50%;" (click)="goToProfile()" />
+
+    <div class="input-area-btn">
+      <ion-textarea rows="1" (click)="clickbtnHide()" [(ngModel)]="newmessage" placeholder="Write a Comment..." class="input-area">
+      </ion-textarea>
+      <ion-button fill="clear" (click)="openGallery()" class="btn-input">
+        <ion-icon name="camera" class="icon"></ion-icon>
+      </ion-button>
+    </div>
+
+    <ion-button *ngIf="postBtnHide" (click)="cancelWritePost()" class="btn-clear">
+      Clear
+    </ion-button>
+    <ion-button *ngIf="postBtnHide" class="btn-post" (click)="submitWritePost()">
+      Post
+    </ion-button>
+  </ion-item>
+</ion-footer>

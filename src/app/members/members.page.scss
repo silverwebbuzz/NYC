@@ -1,0 +1,176 @@
+.tab-toolbar {
+    //padding-top: 5px;
+    //padding-bottom: 5px;
+    .tab-btn {
+        color: white;
+        min-height: 34px;
+        max-width: 100%;
+        font-size: 16px;
+    }
+}
+
+.div-spc{
+    padding: 10px;
+}
+
+.page-members {
+    --background: #f1f1f1;
+    
+    ion-card {
+        margin: 0px;
+        margin-bottom: 10px;
+        
+        .col-profile{
+            padding-right: 10px;
+            
+            .member-pic {
+                height: 45px;
+                width: 45px;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+        }
+        .title {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .locate{
+            font-size: 13px;
+        }
+        .col-btn-join {
+            text-align: right;
+            
+            .btn-join {
+                --border-radius: 50px;
+                margin: 0px;
+                margin-top: 4px;
+                height: 2.0em;
+                font-size: 12px;
+                --background: linear-gradient(-47deg, #0a583c, #18865e);
+            }
+            .btn-disconnect{
+                --padding-start: 0px !important;
+                --padding-end: 0px !important;
+                margin-top: -6px;
+
+                .icon-msg{
+                    height: 27px;
+                    width: 27px;
+                }
+            }
+        }
+    }
+
+    .block-btn{
+        float: right;
+    }
+    
+    .grid{
+        padding: 5px;
+
+        .box-card{
+            //box-shadow: 0px 0px 4px 0px #5d5e5e;
+            border-radius: 0px;
+            background:#fff;
+            height: 280px;
+            width: 100%;
+            padding: 5px 5px 0px 5px;
+            margin: 0px;
+
+            .btn-close{
+                position:absolute; 
+                top:-16px; 
+                right:-16px;
+
+                .icon-clr{
+                    color: #000;
+                }
+            }
+      
+        .profile-pic{
+            border-radius: 50%;
+            object-fit: cover;
+            height: 55px; 
+            width: 55px; 
+            margin: 0 auto;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            
+        }
+            .title{
+                font-size:16px; 
+                color: #000; 
+                font-weight: bold;
+                width: 100%;
+                height: 42px;
+                text-align: center;
+                margin: 0 auto;
+            }
+      
+            .cat-title{
+                font-size:12px; 
+                color: #000;
+                font-weight: bold;
+                height: 13px;
+                width: 100%;
+                text-align: center;
+                margin-top: 8px;
+                margin-bottom: 10px;
+            }
+      
+            .about{
+                text-align: center;
+                font-size: 11px;
+                margin-bottom: 10px;
+                height: 3.2em;
+                overflow: hidden;
+            }
+
+            .mutual{
+                //margin: 5px;
+
+                .mutual-img{
+                    height: 25px; 
+                    width: 25px; 
+                    border-radius: 50%;
+                }
+                .mutual-txt{
+                    font-size: 10px; 
+                    color: #18865e; 
+                    margin-top: 8px;
+                    padding-right: 0px;
+                    padding-left: 0px;
+                }
+            }
+            .row-cnct{
+                //padding: 5px;
+
+                .col-btn{
+                    padding: 0px;
+                }
+                
+                .btn-connect{
+                    width: 100%; 
+                    margin-bottom: 10px;
+                    //padding-bottom: 10px;
+                }
+            }
+        }
+      }
+    }
+
+
+.top-tabs {
+    --background: #107a56;
+    --color: white;
+    border-radius: 10px;
+    ;
+}
+
+ion-label{
+    width: 100%;
+}
+
+ion-badge {
+    width: 45px;
+}

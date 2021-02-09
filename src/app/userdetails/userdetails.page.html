@@ -1,0 +1,239 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title no-padding>
+          <ion-grid>
+              <ion-row>
+                  <ion-col class="header_left_icons" size="1">
+                      <div class="sideMenu">
+                          <ion-buttons class="back-button" slot="start">
+                              <ion-button (click)="goToBack()">
+                                  <ion-icon name="arrow-back"></ion-icon>
+                              </ion-button>
+                          </ion-buttons>
+                      </div>
+                  </ion-col>
+                  <ion-col class="header_search-Box-text" size="11">
+                      <ion-text>More Info.</ion-text>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-title>
+  </ion-toolbar>
+  <ion-toolbar style="--padding-top: 0px; --padding-bottom: 0px; --padding-start: 0px; --padding-end: 0px;">
+    <ion-segment [(ngModel)]="tabs" color="medium" class="tabs-group">
+        <ion-segment-button value="activity">
+          <ion-label  class="tab-btn">Activity</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="education">
+          <ion-label class="tab-btn">Education</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="experience">
+          <ion-label class="tab-btn">Experience</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="contact">
+          <ion-label class="tab-btn">Contact</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div [ngSwitch]="tabs" class="segmnet-all">
+      <div *ngSwitchCase="'activity'">
+        act
+      </div>
+      <div *ngSwitchCase="'education'">
+        
+          <ion-row class="detail-row">
+              <ion-col size="2">
+                  <img src="../../assets/img/man.jpg" class="user-img"/>
+              </ion-col>
+              <ion-col size="10" class="user-details">
+                <ion-row class="user-title">
+                    Bachelor Degree
+                </ion-row>
+                <ion-row class="user-subtitle">
+                      Degree title
+                </ion-row>
+                <ion-row class="user-desc">
+                    2008 - 2010
+                </ion-row>
+              </ion-col>
+          </ion-row>
+          <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Bachelor Degree
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          Degree title
+                    </ion-row>
+                    <ion-row class="user-desc">
+                        2008 - 2010
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Bachelor Degree
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          Degree title
+                    </ion-row>
+                    <ion-row class="user-desc">
+                        2008 - 2010
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                      <ion-col size="2">
+                          <img src="../../assets/img/man.jpg" class="user-img"/>
+                      </ion-col>
+                      <ion-col size="10" class="user-details">
+                        <ion-row class="user-title">
+                            Bachelor Degree
+                        </ion-row>
+                        <ion-row class="user-subtitle">
+                              Degree title
+                        </ion-row>
+                        <ion-row class="user-desc">
+                            2008 - 2010
+                        </ion-row>
+                      </ion-col>
+                  </ion-row>
+
+      </div>
+      <div *ngSwitchCase="'experience'">
+        
+          <ion-row class="detail-row">
+              <ion-col size="2">
+                  <img src="../../assets/img/man.jpg" class="user-img"/>
+              </ion-col>
+              <ion-col size="10" class="user-details">
+                <ion-row class="user-title">
+                    Job title
+                </ion-row>
+                <ion-row class="user-subtitle">
+                      Company Name
+                </ion-row>
+                <ion-row class="user-desc">
+                    jun 2016 . Present . 3 years
+                </ion-row>
+              </ion-col>
+          </ion-row>
+          <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Job title
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          Company Name
+                    </ion-row>
+                    <ion-row class="user-desc">
+                        jun 2016 . Present . 3 years
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Job title
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          Company Name
+                    </ion-row>
+                    <ion-row class="user-desc">
+                        jun 2016 . Present . 3 years
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                      <ion-col size="2">
+                          <img src="../../assets/img/man.jpg" class="user-img"/>
+                      </ion-col>
+                      <ion-col size="10" class="user-details">
+                        <ion-row class="user-title">
+                            Job title
+                        </ion-row>
+                        <ion-row class="user-subtitle">
+                              Company Name
+                        </ion-row>
+                        <ion-row class="user-desc">
+                            jun 2016 . Present . 3 years
+                        </ion-row>
+                      </ion-col>
+                  </ion-row>
+
+      </div>
+      <div *ngSwitchCase="'contact'">
+        
+          <ion-row class="detail-row">
+              <ion-col size="2">
+                  <img src="../../assets/img/man.jpg" class="user-img"/>
+              </ion-col>
+              <ion-col size="10" class="user-details">
+                <ion-row class="user-title">
+                    Email
+                </ion-row>
+                <ion-row class="user-subtitle">
+                      Johnnycolcough@gmail.com
+                </ion-row>
+              </ion-col>
+          </ion-row>
+          <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Phone number
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          1234567890
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                  <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col>
+                  <ion-col size="10" class="user-details">
+                    <ion-row class="user-title">
+                        Email
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                          Johnnycolcough@gmail.com
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                      <ion-col size="2">
+                          <img src="../../assets/img/man.jpg" class="user-img"/>
+                      </ion-col>
+                      <ion-col size="10" class="user-details">
+                        <ion-row class="user-title">
+                            Phone number
+                        </ion-row>
+                        <ion-row class="user-subtitle">
+                              1234567890
+                        </ion-row>
+                      </ion-col>
+                  </ion-row>
+      </div>
+    </div>
+
+</ion-content>

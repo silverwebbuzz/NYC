@@ -1,0 +1,63 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding class="page-login">
+  <img src="../../assets/img/logo-white.png" class="login-logo"/>
+  <form class="list-form" [formGroup]="login_form" autocomplete="off">
+    <ion-grid>
+      <ion-row>
+        <ion-item no-padding>
+            <ion-icon name="person" slot="start" class="login-icon"></ion-icon>
+          <ion-label position="floating" class="login-text-white">
+            USERNAME
+          </ion-label>
+          <ion-input type="text" formControlName="username" class="login-input"></ion-input>
+        </ion-item>
+        <ion-item no-padding lines="none"  class="validator-error" *ngIf="login_form.controls.username.hasError('required') && login_form.controls.username.touched">
+          <p>Username is required!</p>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" *ngIf="login_form.controls.username.hasError('pattern') && login_form.controls.username.touched">
+          <p>Please Enter a Valid Email Address!</p>
+        </ion-item>
+      </ion-row>
+    </ion-grid> 
+    <ion-grid>
+      <ion-row>
+        <ion-item no-padding>
+            <ion-icon name="unlock" mode="ios" slot="start" class="login-icon"></ion-icon>
+          <ion-label position="floating" class="login-text-white">
+            PASSWORD
+          </ion-label>
+          <ion-input type="password" formControlName="password" class="login-input"></ion-input>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" *ngIf="login_form.controls.password.hasError('required') && login_form.controls.password.touched">
+          <p>Password is required!</p>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+    <p class="login-forgot-btn" color="light" text-center ion-text tappable (click)="forgotPass()">FORGOT PASSWORD ? </p>
+    <ion-footer>
+        <div>
+            <ion-button class="login-button" tappable expand="full" shape="round" type="submit" 
+              (click)="doLogin()" >Login</ion-button>
+              <!-- [disabled]="!login_form.valid" -->
+        </div>
+    </ion-footer>
+    
+  </form>
+
+  <div class="bottom-btn-text">
+  <ion-text class="btn-text">
+    Don't have an account ?
+  </ion-text>
+  </div>
+  <div class="btn-register-div">
+  <ion-button fill="clear" class="btn-register" (click)="goTORegister()">Register</ion-button>
+  </div>
+</ion-content>

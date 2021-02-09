@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title no-padding>
+            <ion-grid>
+                <ion-row>
+                  <ion-col class="header_left_icons" size="1">
+                    <div class="sideMenu">
+                      <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                      </ion-buttons>
+                    </div>
+                  </ion-col>
+                  <ion-col class="header_search-Box-text" size="9">
+                    <ion-text>Notifications</ion-text>
+                  </ion-col>
+                  <ion-col class="header_right_icons" size="2" (click)="gotoProfile()">
+                    <img [src]="user_avtar" class="user_image" />
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-notification">
+
+    <ion-card class="item-card" *ngFor="let post of posts">
+      <ion-row>
+        <ion-col size="3">
+          <img src="{{post.user_avtar}}" class="item-img"/>
+        </ion-col>
+        <ion-col size="8" class="item-col">
+          <ion-row>
+            <b>{{post.display_name}} &nbsp;</b>
+            {{post.not_message}}
+          </ion-row>
+          <ion-row class="item-row">
+            {{post.not_timestamp}}
+          </ion-row>
+        </ion-col>
+        <ion-col size="1">
+          <ion-button fill="clear" class="item-btn" (click)="notifications($event)">
+            <ion-icon name="more" color="dark"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      
+      </ion-card>
+
+      <div style="text-align: center; padding: 16px;">
+        <ion-label>You currently have no notifications.</ion-label>
+    </div>
+      
+</ion-content>

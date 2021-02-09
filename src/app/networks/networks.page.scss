@@ -1,0 +1,71 @@
+.page-networks{
+    --background: #f1f1f1;
+    
+    .div-spc{
+
+        ion-card {
+            margin: 8px;
+            --background: #fff; 
+            border-radius: 0;
+            
+            .col-profile{
+                padding-right: 10px;
+                
+                .member-pic {
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 50px;
+                    object-fit: cover;
+                }
+            }
+            .title {
+                font-size: 15px;
+                margin-bottom: 5px;
+                color: black;
+            }
+            .common{
+                margin-top: 5px;
+
+                .badges{
+                    height: 30px; 
+                    width: 30px; 
+                    margin-right: 3px;
+                }
+            }
+            .locate{
+                font-size: 13px;
+            }
+            .col-btn-join {
+                text-align: right;
+                
+                .btn-join {
+                    --border-radius: 50px;
+                    margin: 0px;
+                    margin-top: 4px;
+                    height: 1.7em;
+                    font-size: 12px;
+                    --background: linear-gradient(-47deg, #0a583c, #18865e);
+                }
+                .btn-disconnect{
+                    --padding-start: 0px !important;
+                    --padding-end: 0px !important;
+                    margin-top: -8px;
+    
+                    .icon-msg{
+                        height: 27px;
+                        width: 27px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.common-genres{
+    height: 4.7em;
+    overflow: hidden;
+}
+
+.location{
+    padding-bottom: 5px;
+}

@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title no-padding>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="header_left_icons" size="1">
+                        <div class="sideMenu">
+                            <ion-buttons slot="start">
+                                <ion-menu-button></ion-menu-button>
+                            </ion-buttons>
+                        </div>
+                    </ion-col>
+                    <ion-col class="header_search-Box-text" size="9 ">
+                        <ion-text>Directory</ion-text>
+                    </ion-col>
+                    <ion-col class="header_right_icons" size="2" (click)="gotoProfile()">
+                        <img [src]="user_url" class="user_image" />
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding class="page-networks">
+
+        <div class="div-spc">
+                <ion-card *ngFor="let user of all_members">
+                    <ion-row *ngIf="user_id != user.userid">
+                        <ion-col size="2" (click)="userProfile(user.userid)" class="col-profile">
+                            <img [src]="user.avatarimg" class="member-pic"/>
+                        </ion-col>
+                        <ion-col size="7" (click)="userProfile(user.userid)">
+                            <ion-row>
+                                <ion-label class="title">
+                                    {{user.username}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row *ngIf="user.location" class="location">
+                                <ion-text>
+                                    <ion-icon name="pin"></ion-icon>
+                                    {{user.location}}
+                                </ion-text>
+                            </ion-row>
+                            <ion-row *ngIf="user.genres.length > 0" class="common-genres">
+                                <ion-text>
+                                   {{user.genres.join(', ')}}
+                                </ion-text>
+                            </ion-row>
+                            <ion-row class="common" *ngIf="user.badges">
+                                <ng-container *ngFor="let badge of user.badges">
+                                        <img *ngIf="badge" [src]="badge" class="badges"/>
+                                </ng-container>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col size="3" class="col-btn-join">
+                            <ion-button fill="clear" class="btn-disconnect" (click)="conversationPage()">
+                                <img src="../../assets/icon/msg-with-circle.png" class="icon-msg"/>
+                            </ion-button>
+                            <ion-button fill="clear" class="btn-disconnect" (click)="membersPopover($event)">
+                                    <img src="../../assets/icon/dot-with-circle.png" class="icon-msg"/>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+        
+                <div *ngIf="all_members.length == 0" class="no-more-data">
+                    <ion-text>No Members Found.</ion-text>
+                </div>
+            </div>
+
+</ion-content>

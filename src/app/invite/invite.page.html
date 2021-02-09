@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title no-padding>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="header_left_icons" size="1">
+              <div class="sideMenu">
+                <ion-buttons class="back-button" slot="start">
+                  <ion-button (click)="goToBack()">
+                    <ion-icon name="arrow-back"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-col>
+            <ion-col class="header_search-Box-text" size="11">
+              <ion-text>Invite</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <ion-text class="txt">Come and join our community. Expand your network and get to know new people!</ion-text>
+  <ion-text class="txt">New York City Writers Network is a New York-based organization that aims to connect writers, readers, and publishing industry professionals.</ion-text>
+  <ion-text class="txt">Our goal is to provide our members with a safe space to network, share, and grow, both online and off. NYCWN strives to be a one-stop-shop — a resource, a platform, and a community — for all things writing, reading, and publishing related.</ion-text>
+  <ion-text class="txt">Expand your network and get to know new people! share the link</ion-text>
+
+
+  <!-- <ion-button expand="full" shape="round" fill="outline" (click)="sharePicker()">
+    <ion-icon name="person-add"></ion-icon>
+    Invite
+  </ion-button> -->
+
+  <ion-fab-button style="position: absolute; bottom: 20px; right: 20px;" (click)="sharePicker()">
+    <ion-icon name="person-add" mode="md"></ion-icon>
+  </ion-fab-button>
+
+
+</ion-content>

@@ -1,0 +1,16 @@
+:host{
+    ion-item{
+        width: 100%;
+        color: #fff;
+        --ion-background-color: none;   
+    }
+    .item-native{
+        padding-left: 0px;
+    }
+    ion-item.validator-error{
+        border-bottom:none !important;
+    }
+    
+}
+
+

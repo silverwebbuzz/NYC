@@ -1,0 +1,199 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+//@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i');
+//@import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+// @font-face {
+//     font-family: 'Ubuntu';
+//     font-weight: 300;
+//     font-style: normal;
+//     src: url('src/assets/fonts/ubuntu/Ubuntu-R.ttf');
+// }
+
+// .native-input.sc-ion-input-ios{
+//     padding-inline-start: 30px;
+// }
+.page-header {
+    margin-top: 15px;
+}
+
+button.days-btn{
+    background-color: green;
+}
+.week-title li{
+    color: #1a732d !important; 
+    font-weight: bold;
+  }
+
+
+.page-login {
+    --ion-background-color: linear-gradient(to bottom left, #28B478 25%, #0E2E22 100%);
+    .login-logo {
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .list-form {
+        .login-icon {
+            position: absolute;
+            bottom: 0;
+            //--padding-end: 20px;
+        }
+        .login-text-white {
+            padding-left: 40px;
+        }
+        .login-input {
+            //margin-left: 80px;
+            //padding-inline-start: 30px;
+            //--padding-start: 35px;
+            --padding-start: 30px;
+        }
+        .validator-error {
+            p {
+                color: red;
+            }
+        }
+        .login-forgot-btn {
+            color: #fff;
+        }
+         
+            .login-button {
+                --background: mediumseagreen;
+                color: white;
+            }
+        
+    }
+    .bottom-btn-text {
+        text-align: center;
+        margin-top: 30px;
+        .btn-text {
+            color: #ccc;
+        }
+    }
+    .btn-register-div {
+        text-align: center;
+        .btn-register {
+            color: white;
+            letter-spacing: 0.1em;
+        }
+    }
+}
+
+.header_left_icons {
+    padding-left: 0;
+}
+
+.sideMenu {
+    ion-menu-button {
+        margin-top: 14px;
+    }
+}
+
+.header_search-Box {
+    padding-right: 0;
+    ion-searchbar {
+        padding-right: 0;
+    }
+}
+
+.header_right_icons {
+    padding: 0px;
+    .user_image {
+        width: 40px;
+        margin-top: 15px;
+        border-radius: 50%;
+    }
+}
+
+.header_search-Box-text {
+    line-height: 58px;
+    font-size: 18px;
+}
+
+.menu-dark {
+    .sidemenuHeader {
+        .header-toolbar {
+            --padding-top: 0px;
+            --padding-bottom: 0px;
+            --padding-start: 0px;
+            --padding-end: 0px;
+            .toolbar-card {
+                margin: 0px;
+                border-radius: 0px;
+                .profile-div {
+                    width: 100%;
+                    position: absolute;
+                    top: 0px;
+                    .profile-pic {
+                        height: 65px;
+                        width: 65px;
+                        border-radius: 50%;
+                        box-shadow: 0px 0px 4px 0px;
+                        object-fit: cover;
+                        margin-left: 15px;
+                        margin-top: 15px;
+                        //margin: 0 auto;
+                        //border: 4px solid #fff; 
+                    }
+                }
+                .username-div {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 30px;
+                    margin-left: 15px;
+                    color: white;
+                }
+                .email-div {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 10px;
+                    margin-left: 15px;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.back-button {
+    margin-top: 12px;
+}
+
+.no-more-data {
+    width: 100%;
+    text-align: center;
+}
+.contact-popover{
+    // --padding: 5px;
+    border-radius:3px;
+    --box-shadow:5px;
+    --width:100%;
+    width:100%;
+    --max-width:100%;
+    overflow: visible!important;
+
+    .popover-viewport{
+        width: 500px;
+        overflow: scroll;
+    
+        .row{
+            display: inline-block;
+            max-width: 100%;
+            width: 2000px;
+    
+            div{
+                margin: 0px 5px;
+                display: inline-block;
+                width: 7%;
+                // float: left;
+            }
+        }
+    }
+  }

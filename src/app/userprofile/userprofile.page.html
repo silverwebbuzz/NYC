@@ -1,0 +1,349 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title no-padding>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="header_left_icons" size="1">
+                        <div class="sideMenu">
+                            <ion-buttons class="back-button" slot="start">
+                                <ion-button (click)="goToBack()">
+                                    <ion-icon name="arrow-back"></ion-icon>
+                                </ion-button>
+                            </ion-buttons>
+                        </div>
+                    </ion-col>
+                    <ion-col class="header_search-Box-text" size="11">
+                        <!-- <ion-text>User Details</ion-text> -->
+                        <ion-searchbar></ion-searchbar>
+                    </ion-col>
+                    <!-- <ion-col class="header_right_icons" size="2">
+                        <img [src]="user_url" class="user_image" />
+                    </ion-col> -->
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding class="page-user-profile">
+
+    <ion-card class="main-card">
+        <img *ngIf="!user_cover_photo" src="../../assets/img/desk.jpg" height="200px" />
+        <img *ngIf="user_cover_photo" [src]="user_cover_photo" height="200px" />
+    </ion-card>
+
+    <ion-card class="info-card">
+
+        <div class="profile-div">
+            <img *ngIf="!user_avatar" src="../../assets/img/user-icon.png" class="profile-pic" />
+            <img *ngIf="user_avatar" [src]="user_avatar" class="profile-pic" />
+        </div>
+
+        <ion-label class="user-label">{{user_name}}</ion-label>
+
+        <ion-label class="header-label">
+            <ion-icon name="pin"></ion-icon>
+            From
+            <ion-text class="location">{{user_location}}</ion-text>
+      <!-- Business Development Manager at xyz Infotech solution Pvt. Ltd. -->
+    </ion-label>
+
+    <ion-label class="sub-header-label">
+        <ion-text>{{description_status}}</ion-text>
+    </ion-label>
+    
+    <ion-label class="sub-header-label">
+        <ion-icon name="stats"></ion-icon>
+        Genres
+        <ion-text>{{user_genres}}</ion-text>
+    </ion-label>
+
+        <ion-row class="common" *ngIf="user_badges">
+            <ion-label class="spc-badges">
+                <ion-icon name="ribbon"></ion-icon>
+                Badges
+            </ion-label>
+            <ng-container *ngFor="let badge of user_badges">
+                <img *ngIf="badge" [src]="badge" class="badges" />
+            </ng-container>
+        </ion-row>
+
+        <!-- <ion-label class="sub-header-label">Gujarat Technology</ion-label> -->
+
+        <!-- <ion-label *ngIf="user_location" class="sub-header-label">
+            <ion-icon name="home"></ion-icon>
+            Lives in <b>{{user_location}}</b>
+        </ion-label> -->
+
+        <ion-row class="sub-header-btn">
+            <ion-col size="3" *ngIf="user_frnd_status == 'noFriends'" (click)="sendFriendReq()">
+                <ion-icon name="person-add" class="circle-btn"></ion-icon>
+                <p class="circle-btn-text">Add</p>
+            </ion-col>
+            <ion-col size="3" *ngIf="user_frnd_status == 'friends'">
+                <ion-icon name="person" class="circle-btn-active"></ion-icon>
+                <p class="circle-btn-text-active">Friends</p>
+            </ion-col>
+            <ion-col size="3" *ngIf="user_frnd_status == 'requested'">
+                <ion-icon name="person" class="circle-btn-active"></ion-icon>
+                <p class="circle-btn-text-active">Requested</p>
+            </ion-col>
+            <ion-col size="3">
+                <ion-icon name="chatboxes" class="circle-btn"></ion-icon>
+                <p class="circle-btn-text">Message</p>
+            </ion-col>
+            <ion-col size="3">
+                    <ion-icon name="close-circle-outline" class="circle-btn"></ion-icon>
+                    <p class="circle-btn-text">Block</p>
+                </ion-col>
+            <ion-col size="3">
+                <ion-icon name="more" class="circle-btn"></ion-icon>
+                <p class="circle-btn-text">More</p>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+
+    <ion-card class="post-card">
+        
+            <!-- <div *ngIf="videoArea" class="video-area">
+                  <ion-input placeholder="Enter Video URL here" class="video-url-input"></ion-input>
+            </div> -->
+      
+            <ion-textarea *ngIf="postTextArea" placeholder="Write something..."
+            class="post-area" (click)="clickbtnHide()"></ion-textarea>
+      
+            <!-- <div *ngIf="photoArea" class="photo-area">
+              <ion-label class="photo-header">
+                <ion-icon name="image"></ion-icon>
+                Click here to start uploading photos
+              </ion-label>
+              <ion-label class="photo-desc">
+                Max phot dimensions: 1000 x 2000px | Max file size: 1MB
+              </ion-label>
+            </div> -->
+      
+            <ion-item lines="none" class="post-area-btn" *ngIf="btnHide">
+                <!-- <ion-button fill="clear" class="privacy-btn">
+                  <ion-icon name="people" mode="md" class="privacy-btn-icon"></ion-icon>
+                  Site Members
+                </ion-button> -->
+                <ion-button fill="clear" (click)="privacy()" class="btn">
+                    <ion-icon name="globe" slot="start" mode="md"></ion-icon>
+                    {{networkType}}
+                </ion-button>
+                
+                <!-- <ion-label>
+                    <ion-icon name="people" mode="md" style="margin-right: 5px;"></ion-icon>
+                  Site Members
+                </ion-label>
+                <ion-select okText="Okay" cancelText="Dismiss">
+                  <ion-select-option >Brown</ion-select-option>
+                  <ion-select-option >Blonde</ion-select-option>
+                  <ion-select-option>Black</ion-select-option>
+                  <ion-select-option >Red</ion-select-option>
+                </ion-select>  -->
+      
+                <ion-button fill="clear" class="privacy-btn">
+                  <ion-icon name="happy"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" class="privacy-btn">
+                  <ion-icon name="pin"></ion-icon>
+                </ion-button>
+                <ion-button class="end-btn" slot="end" (click)="cancelWritePost()">
+                  Cancel
+                </ion-button>
+                <ion-button class="end-btn" slot="end">
+                  Post
+                </ion-button>
+              </ion-item>
+      
+            <ion-item lines="none" class="post-area-btn" *ngIf="tabView">
+              <ion-button (click)="postviewArea()" [ngClass]="{'active': PostTab}" fill="clear" class="privacy-btn">
+                <ion-icon name="create" mode="md" class="privacy-btn-icon"></ion-icon>
+                Status
+              </ion-button>
+              <!-- <ion-button (click)="photoviewArea()" [ngClass]="{'active': PhotoTab}" fill="clear" class="privacy-btn">
+                <ion-icon name="camera" class="privacy-btn-icon"></ion-icon>
+                Photo
+              </ion-button>
+              <ion-button (click)="videoviewArea()" [ngClass]="{'active': VideoTab}" fill="clear" class="privacy-btn">
+                <ion-icon name="logo-youtube" class="privacy-btn-icon"></ion-icon>
+                Video
+              </ion-button> -->
+            </ion-item>
+          </ion-card>
+
+          <!-- <ion-card class="detail-card">
+              <ion-label class="main-header">
+                  Articles & activity
+              </ion-label>
+              <div class="hr_line"></div>
+              <ion-row class="detail-row">
+                  -- <ion-col size="2">
+                      <img src="../../assets/img/man.jpg" class="user-img"/>
+                  </ion-col> --
+                  <ion-col size="12" class="user-details">
+                    <ion-row class="user-title">
+                        7 of the Best Books
+                    </ion-row>
+                    <ion-row class="user-subtitle">
+                        Best Books
+                    </ion-row>
+                    <ion-row class="user-desc">
+                        Johnny Colcough Shared this
+                    </ion-row>
+                    <ion-row class="user-likes">
+                        15 likes . 40 comments
+                    </ion-row>
+                  </ion-col>
+              </ion-row>
+              <ion-row class="detail-row">
+                    -- <ion-col size="2">
+                        <img src="../../assets/img/man.jpg" class="user-img"/>
+                    </ion-col> --
+                    <ion-col size="12" class="user-details">
+                      <ion-row class="user-title">
+                          7 of the Best Books
+                      </ion-row>
+                      <ion-row class="user-subtitle">
+                          Best Books
+                      </ion-row>
+                      <ion-row class="user-desc">
+                          Johnny Colcough Shared this
+                      </ion-row>
+                      <ion-row class="user-likes">
+                          15 likes . 40 comments
+                      </ion-row>
+                    </ion-col>
+                </ion-row>
+                <div class="hr_line"></div>
+                <ion-button size="small" fill="clear" expand="full" color="dark" routerLink="/userdetails">
+                    SEE ALL ACTIVITY
+                </ion-button>
+          </ion-card> -->
+
+          <ion-card class="detail-card">
+                <ion-label class="main-header">
+                    Education
+                </ion-label>
+                <div class="hr_line"></div>
+                <ion-row class="detail-row">
+                    <!-- <ion-col size="2">
+                        <img src="../../assets/img/man.jpg" class="user-img"/>
+                    </ion-col> -->
+                    <ion-col size="12" class="user-details">
+                      <ion-row class="user-title">
+                          Bachelor Degree
+                      </ion-row>
+                      <ion-row class="user-title-light">
+                            Degree title
+                      </ion-row>
+                      <ion-row class="user-desc">
+                          2008 - 2010
+                      </ion-row>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="detail-row">
+                        <!-- <ion-col size="2">
+                            <img src="../../assets/img/man.jpg" class="user-img"/>
+                        </ion-col> -->
+                        <ion-col size="12" class="user-details">
+                          <ion-row class="user-title">
+                              Bachelor Degree
+                          </ion-row>
+                          <ion-row class="user-title-light">
+                                Degree title
+                          </ion-row>
+                          <ion-row class="user-desc">
+                              2008 - 2010
+                          </ion-row>
+                        </ion-col>
+                    </ion-row>
+                  <div class="hr_line"></div>
+                  <ion-button size="small" fill="clear" expand="full" color="dark" routerLink="/userdetails">
+                      SEE ALL
+                  </ion-button>
+            </ion-card>
+
+            <ion-card class="detail-card">
+                    <ion-label class="main-header">
+                        Experience
+                    </ion-label>
+                    <div class="hr_line"></div>
+                    <ion-row class="detail-row">
+                        <!-- <ion-col size="2">
+                            <img src="../../assets/img/man.jpg" class="user-img"/>
+                        </ion-col> -->
+                        <ion-col size="12" class="user-details">
+                          <ion-row class="user-title">
+                              Job title
+                          </ion-row>
+                          <ion-row class="user-title-light">
+                                Company Name
+                          </ion-row>
+                          <ion-row class="user-desc">
+                              jun 2016 . Present . 3 years
+                          </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="detail-row">
+                            <!-- <ion-col size="2">
+                                <img src="../../assets/img/man.jpg" class="user-img"/>
+                            </ion-col> -->
+                            <ion-col size="12" class="user-details">
+                              <ion-row class="user-title">
+                                  Job title
+                              </ion-row>
+                              <ion-row class="user-title-light">
+                                    Company Name
+                              </ion-row>
+                              <ion-row class="user-desc">
+                                  jun 2016 . Present . 3 years
+                              </ion-row>
+                            </ion-col>
+                        </ion-row>
+                      <div class="hr_line"></div>
+                      <ion-button size="small" fill="clear" expand="full" color="dark" routerLink="/userdetails">
+                          SEE ALL
+                      </ion-button>
+                </ion-card>
+
+            <ion-card class="detail-card">
+                    <ion-label class="main-header">
+                        Contact
+                    </ion-label>
+                    <div class="hr_line"></div>
+                    <ion-row class="detail-row">
+                        <!-- <ion-col size="2">
+                            <img src="../../assets/img/man.jpg" class="user-img"/>
+                        </ion-col> -->
+                        <ion-col size="12" class="user-details">
+                          <ion-row class="user-title">
+                              Email
+                          </ion-row>
+                          <ion-row class="user-title-light">
+                                Johnnycolcough@gmail.com
+                          </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="detail-row">
+                            <!-- <ion-col size="2">
+                                <img src="../../assets/img/man.jpg" class="user-img"/>
+                            </ion-col> -->
+                            <ion-col size="12" class="user-details">
+                              <ion-row class="user-title">
+                                  Phone number
+                              </ion-row>
+                              <ion-row class="user-title-light">
+                                    1234567890
+                              </ion-row>
+                            </ion-col>
+                        </ion-row>
+                      <div class="hr_line"></div>
+                      <ion-button size="small" fill="clear" expand="full" color="dark" routerLink="/userdetails">
+                          SEE ALL
+                      </ion-button>
+                </ion-card>
+
+</ion-content>

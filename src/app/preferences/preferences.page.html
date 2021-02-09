@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title no-padding>
+          <ion-grid>
+              <ion-row>
+                  <ion-col class="header_left_icons" size="1">
+                      <div class="sideMenu">
+                          <ion-buttons class="back-button" slot="start">
+                              <ion-button (click)="goToBack()">
+                                  <ion-icon name="arrow-back"></ion-icon>
+                              </ion-button>
+                          </ion-buttons>
+                      </div>
+                  </ion-col>
+                  <ion-col class="header_search-Box-text" size="11">
+                      <ion-text>Preferences</ion-text>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content no-padding class="page-preferences">
+
+    <ion-label class="main-header">Profile</ion-label>
+    <ion-item lines="none" class="check-items">
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="check-label">Allow others to "like" my profile</ion-label>
+    </ion-item>
+    <ion-label class="header">Who can see my profile</ion-label>
+    <ion-button class="btn-privacy">
+      <ion-icon name="lock"></ion-icon>
+      Only Me
+    </ion-button>
+    <ion-label class="header">Who can post on my profile</ion-label>
+    <ion-button class="btn-privacy">
+      <ion-icon name="person"></ion-icon>
+      Connection Only
+    </ion-button>
+    <ion-item lines="none" class="check-items">
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="check-label">Make my profile invisible</ion-label>
+    </ion-item>
+
+    <ion-label class="main-header">Other</ion-label>
+    <ion-item lines="none" class="check-items">
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="check-label">Don't show my online status</ion-label>
+    </ion-item>
+    <ion-label class="header">My timezone</ion-label>
+
+    <ion-label class="main-header">Messages and Chat</ion-label>
+    <ion-item lines="none" class="check-items">
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="check-label">Enable Chat (Messages will still work if you disable Chat)</ion-label>
+    </ion-item>
+    <ion-item lines="none" class="check-items">
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="check-label">Open minimized chat window for new message</ion-label>
+    </ion-item>
+
+    <ion-label class="main-header">NOTIFICATIONS</ion-label>
+
+    <ion-label class="header">Activity Stream</ion-label>
+    <ion-label class="items">Someone wrote a post on my Profile</ion-label>
+    <ion-label class="items">Someone commented on my Post</ion-label>
+    <ion-label class="items">Someone liked my Post</ion-label>
+    <ion-label class="items">Someone liked my Comment</ion-label>
+    <ion-label class="items">Someone shared my Post</ion-label>
+
+    <ion-label class="header">Profile</ion-label>
+    <ion-label class="items">Someone liked my Profile</ion-label>
+    
+    <ion-label class="header">Network</ion-label>
+    <ion-label class="items">Someone sent me a Connection Request</ion-label>
+
+    <ion-label class="header">Messages</ion-label>
+    <ion-label class="items">Someone sent me a new Message</ion-label>
+
+    <ion-label class="header">Photos</ion-label>
+    <ion-label class="items">Someone liked my Photos</ion-label>
+    <ion-label class="items">Someone commented on my Photos</ion-label>
+    <ion-label class="items">Someone shared my Photos</ion-label>
+    <ion-label class="items">Someone liked my Avatar</ion-label>
+    <ion-label class="items">Someone commented on my Avatar</ion-label>
+    <ion-label class="items">Someone shared my Avatar</ion-label>
+    <ion-label class="items">Someone liked my Cover Photo</ion-label>
+    <ion-label class="items">Someone commented on my Cover Photo</ion-label>
+    <ion-label class="items">Someone shared my Cover Photo</ion-label>
+    <ion-label class="items">Someone liked my Album</ion-label>
+    <ion-label class="items">Someone commented on my Album</ion-label>
+    <ion-label class="items">Someone shared my Album</ion-label>
+
+    <ion-label class="header">Tags</ion-label>
+    <ion-label class="items">Someone tagged me in a Post</ion-label>
+    <ion-label class="items">Someone tagged me in a Comment</ion-label>
+
+    <ion-label class="header">Videos</ion-label>
+    <ion-label class="items">Someone liked my Video</ion-label>
+    <ion-label class="items">Someone commented on my Video</ion-label>
+    <ion-label class="items">Someone shared my Video</ion-label>
+    
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+      <ion-toolbar color="primary">
+          <ion-title no-padding>
+              <ion-grid>
+                  <ion-row>
+                      <ion-col class="header_left_icons" size="1">
+                          <div class="sideMenu">
+                              <ion-buttons slot="start">
+                                  <ion-button fill="clear" class="btn-close" (click)="back()">
+                                    <ion-icon name="arrow-back"></ion-icon>
+                                  </ion-button>
+                                </ion-buttons>
+                          </div>
+                      </ion-col>
+                      <ion-col size="2">
+                          <img src="../../assets/img/man.jpg" class="header-profile-img"/>
+                      </ion-col>
+                      <ion-col class="header_search-Box-text" size="7">
+                          <ion-label class="header-username">Username</ion-label>
+                      </ion-col>
+                      <ion-col size="2">
+                          <ion-buttons>
+                              <ion-button style="margin-top: 13px; margin-left: 13px;">
+                                <ion-icon name="more" mode="md"></ion-icon>
+                              </ion-button>
+                            </ion-buttons>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-title>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="modal-components">
+  
+  <ion-row class="row-receiver">
+    <ion-label class="label-receiver">
+      Receive Message
+    </ion-label>
+  </ion-row>
+  <ion-row class="row-sender">
+    <ion-label class="label-sender">
+    Send Message
+    </ion-label>
+  </ion-row>
+  
+  </ion-content>
+  
+  <ion-footer class="component-footer">
+    <div class="hr"></div>
+    <ion-item lines="none" class="footer-item">
+        <!-- <img src="../../../assets/img/user-icon.png" class="profile-img" (click)="goToProfile()"/> -->
+
+        <div class="input-area-btn">
+          <ion-textarea rows="1" (click)="clickbtnHide()" [(ngModel)]="newmessage" placeholder="Type a message..." class="input-area">
+          </ion-textarea>
+          <ion-button fill="clear" (click)="openGallery()" class="btn-input">
+            <ion-icon name="camera" class="icon"></ion-icon>
+          </ion-button>
+        </div>
+  
+        <!-- <ion-button *ngIf="postBtnHide" (click)="cancelWritePost()" class="btn-clear">
+          Clear
+        </ion-button> -->
+        <ion-button *ngIf="postBtnHide" class="btn-post">
+          Send
+        </ion-button>
+    </ion-item>
+  </ion-footer>
+  

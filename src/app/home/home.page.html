@@ -1,0 +1,109 @@
+<ion-header>
+        <ion-toolbar color="primary">
+        <ion-title no-padding>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="header_left_icons" size="1">
+                        <div class="sideMenu">
+                            <ion-buttons slot="start">
+                                <ion-menu-button></ion-menu-button>
+                            </ion-buttons>
+                        </div>
+                    </ion-col>
+                    <ion-col class="header_search-Box" size="9">
+                        <ion-searchbar placeholder="Search" (click)="searchModal()"></ion-searchbar>
+                    </ion-col>
+                    <ion-col class="header_right_icons" size="2" (click)="gotoProfile()">
+                        <img [src]="user_url" class="user_image" />
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item class="feed-post" lines="none" (click)="post()">
+        Write something...
+            <fa-icon slot="end" [icon]="['fas', 'paperclip']" size="sm" class="btn-attach"></fa-icon>
+    </ion-item>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div *ngFor="let post of posts; let j=index;">
+        <ion-card *ngIf="post.content || post.post_photo_url || post.post_video" style="margin-bottom: 8px;">
+            <ion-item lines="none">
+                <ion-row class="post_author_row">
+                    <ion-col size="2">
+                        <ion-avatar item-left>
+                            <img src="{{post.profile_avtar}}"/>
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col size="8" (click)="gotoUserProfile(post.author.ID)">
+                        <h2 class="post_author" *ngIf="post.username">{{post.username}}</h2>
+                        <!-- <h2 class="post_author" *ngIf="!post.author.username">{{post.author.user_nicename}}</h2> -->
+                        <p class="post_date" *ngIf="post.activity_date">{{post.activity_date}} 08:15 pm</p>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-button item-right fill="clear" (click)="postOptions($event)">
+                            <ion-icon name="more" class="icon"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+
+            </ion-item>
+            <ion-card-content *ngIf="post.content" class="post_html">
+                <div [innerHTML]="post.content"></div>
+            </ion-card-content>
+            <ion-card-content *ngIf="post.post_video" class="post_video_title">
+                <div *ngIf="post.post_video.vid_title">{{post.post_video.vid_title}}</div>
+            </ion-card-content>
+            <ion-card-content class="post_video" *ngIf="post.post_video">
+                <iframe width="100%" height="225px" [src]="post.post_video.vid_url | safe" frameborder="0" allowfullscreen></iframe>
+            </ion-card-content>
+            <ion-card-content class="post_img_video" *ngIf="post.post_photo_url">
+                <img src="{{post.post_photo_url}}" />
+            </ion-card-content>
+            <ion-card-content class="hr_divider">
+                <div class="hr"></div>
+            </ion-card-content>
+            <div class="hr-line"></div>
+            <ion-grid class="grid">
+                <ion-row class="post-options-row">
+                    <ion-col class="post-option-like" size="3">
+                        <div *ngIf="post.post_reaction === null">
+                                <ion-button fill="clear" expand="full" (click)="showReactions($event, j)"   class="bottom-btn-clr" *ngIf="likeBtn">
+                                    <fa-icon [icon]="['far', 'thumbs-up']" slot="start"></fa-icon>
+                                    <div>Like</div>
+                                </ion-button>
+                        </div>
+                        <div *ngFor="let r of allReactionType; let i=index;">
+                            <div *ngIf="r.reaction_ID===convertNumber(post.post_reaction)">
+                                    <ion-button fill="clear" expand="full" (click)="showReactions($event, j)"   class="bottom-btn-clr" *ngIf="likeBtn">
+                                        <img src="{{r.post_excerpt}}" style="height: 22px; width: 22px; margin-right: 5px;"/>
+                                        <div>{{r.title}}</div>
+                                    </ion-button>
+                            </div>
+                        </div>
+                        <!-- <ion-button fill="clear" expand="full" (click)="showReactions($event)" *ngIf="dataReturned"> 
+                                <img class="lyk" src="{{dataReturned.post_excerpt}}" />
+                                {{dataReturned.title}}
+                         </ion-button> -->
+                    </ion-col>
+                    <ion-col class="post-option-comment" size="5">
+                        <ion-button fill="clear" expand="full" class="bottom-btn-clr" (click)="openCommentModal(post.post_id, post.author.ID)">
+                            <fa-icon [icon]="['far', 'comment-dots']" slot="start"></fa-icon>
+                            <div>Comment</div>
+                        </ion-button>
+                    </ion-col>
+                    <ion-col class="post-option-share" size="4">
+                        <ion-button fill="clear" expand="full" class="bottom-btn-clr" (click)="sharePicker()">
+                            <fa-icon [icon]="['fas', 'share-alt']" slot="start"></fa-icon>
+                            <div>Share</div>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+    </div>
+</ion-content>

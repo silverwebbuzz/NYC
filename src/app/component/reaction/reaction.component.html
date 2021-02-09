@@ -1,0 +1,7 @@
+      <div class="row">
+        <div *ngFor="let r of allrecation; let i=index;" (click)="like(r.reaction_ID)">
+          <img src="{{r.post_excerpt}}"> 
+          <!-- {{r.title}}  {{r.post_excerpt}}-->
+          {{data}}
+         </div>
+      </div>

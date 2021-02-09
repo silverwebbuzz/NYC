@@ -1,0 +1,208 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title no-padding>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="header_left_icons" size="1">
+                        <div class="sideMenu">
+                            <ion-buttons slot="start">
+                                <ion-menu-button></ion-menu-button>
+                            </ion-buttons>
+                        </div>
+                    </ion-col>
+                    <ion-col class="header_search-Box-text" size="9">
+                        <ion-text>Network</ion-text>
+                    </ion-col>
+                    <ion-col class="header_right_icons" size="2" (click)="gotoProfile()">
+                        <img [src]="user_url" class="user_image" />
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+    <ion-toolbar color="primary" class="tab-toolbar">
+        <ion-segment [(ngModel)]="tabs" color="medium">
+            <!-- <ion-segment-button value="mymembers" (click)="changeuserList()" class="tab-btn" checked>
+                <ion-label>Connections</ion-label>
+            </ion-segment-button> -->
+            <ion-segment-button value="frdreq_frd" (click)="changeuserList()" class="tab-btn">
+                <ion-label>Requests</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="requested_frd" (click)="changeuserList()" class="tab-btn">
+                <ion-label>Suggestions</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-members">
+
+    <div [ngSwitch]="tabs">
+        <div *ngSwitchCase="'frdreq_frd'">
+            <ion-grid class="grid">
+                <ion-row>
+                    <ion-col size="6" class="grid" *ngFor="let user of incoming_request">
+                        <ion-card class="box-card">
+                            <ion-button fill="clear" class="btn-close">
+                                <ion-icon name="close" class="icon-clr"></ion-icon>
+                            </ion-button>
+                            <img [src]="user.avatarimg" (click)="userProfile(user.userid)" class="profile-pic"/>
+                            <ion-row class="title">
+                                <ion-label>
+                                    {{user.username}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="cat-title">
+                                <ion-label>
+                                    {{user.location}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="about">
+                                <ion-label>
+                                    {{user.genres}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="mutual">
+                                <ion-col size="3">
+                                    <img src="../../assets/img/man.jpg" class="mutual-img" />
+                                </ion-col>
+                                <ion-col size="9" class="mutual-txt">
+                                    {{user.requested_member}}
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="row-cnct">
+                                <ion-col size="6" class="col-btn">
+                                    <ion-button fill="clear">
+                                        <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
+                                    </ion-button>
+                                </ion-col>
+                                <ion-col size="6" class="col-btn">
+                                    <ion-button fill="clear">
+                                        <ion-icon name="close-circle-outline" size="large"></ion-icon>
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- <div *ngSwitchCase="'newmembers'" class="div-spc"> -->
+            <!-- <ion-card *ngFor="let user of new_member_list">
+                <ion-row *ngIf="user_id != user.userid">
+                    <ion-col size="2" (click)="userProfile(user.userid)" class="col-profile">
+                        <img [src]="user.avatarimg" class="member-pic" />
+                    </ion-col>
+                    <ion-col size="5" (click)="userProfile(user.userid)">
+                        <ion-row>
+                            <ion-label class="title">
+                                {{user.username}}
+                            </ion-label>
+                        </ion-row>
+                        <ion-row *ngIf="user.location.name">
+                            <ion-text class="locate">
+                                <ion-icon name="pin"></ion-icon>
+                                {{user.location}}
+                            </ion-text>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col size="5" class="col-btn-join">
+                        <ion-row class="block-btn">
+                            <ion-button shape="round" size="small" class="btn-join" (click)="sendFriendRquest(user.userid)">
+                                Connected
+                            </ion-button>
+                            <ion-button fill="clear" class="btn-disconnect">
+                                <ion-icon name="close" size="large"></ion-icon>
+                            </ion-button>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-card> -->
+            <div *ngIf="incoming_request.length == 0" class="no-more-data">
+                <ion-text>You currently have no connection requests.</ion-text>
+            </div>
+
+        </div>
+
+        <!-- <div *ngSwitchCase="'mymembers'" class="div-spc">
+            <ion-card *ngFor="let user of all_friends">
+                <ion-row *ngIf="user_id != user.userid">
+                    <ion-col size="2" (click)="userProfile(user.userid)" class="col-profile">
+                        <img [src]="user.avatarimg" class="member-pic"/>
+                    </ion-col>
+                    <ion-col size="6" (click)="userProfile(user.userid)">
+                        <ion-row>
+                            <ion-label class="title">
+                                {{user.username}}
+                            </ion-label>
+                        </ion-row>
+                        <ion-row>
+                            <ion-text>
+                                <ion-icon name="pin"></ion-icon>
+                                {{user.location}}
+                            </ion-text>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col size="4" class="col-btn-join">
+                        <ion-button fill="clear" class="btn-disconnect" routerLink="/conversation">
+                            <img src="../../assets/icon/msg-with-circle.png" class="icon-msg"/>
+                        </ion-button>
+                        <ion-button fill="clear" class="btn-disconnect" (click)="membersPopover($event)">
+                                <img src="../../assets/icon/dot-with-circle.png" class="icon-msg"/>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+            <div *ngIf="all_friends.length == 0" class="no-more-data">
+                <ion-text>No New Members Found.</ion-text>
+            </div>
+        </div> -->
+
+        <div *ngSwitchCase="'requested_frd'">
+            <ion-grid class="grid">
+                <ion-row>
+                    <ion-col size="6" class="grid" *ngFor="let user of requested_member">
+                        <ion-card class="box-card">
+                            <ion-button fill="clear" class="btn-close">
+                                <ion-icon name="close" class="icon-clr"></ion-icon>
+                            </ion-button>
+                            <img [src]="user.avatarimg" (click)="userProfile(user.userid)" class="profile-pic" />
+                            <ion-row class="title">
+                                <ion-label>
+                                    {{user.username}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="cat-title">
+                                <ion-label>
+                                    {{user.location}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="about">
+                                <ion-label>
+                                    {{user.genres}}
+                                </ion-label>
+                            </ion-row>
+                            <ion-row class="mutual">
+                                <ion-col size="3">
+                                    <img src="../../assets/img/man.jpg" class="mutual-img" />
+                                </ion-col>
+                                <ion-col size="9" class="mutual-txt">
+                                    {{user.mutualfrd}}
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="row-cnct">
+                                <ion-button expand="block" fill="outline" size="small" class="btn-connect">
+                                    CONNECT
+                                </ion-button>
+                            </ion-row>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <div *ngIf="requested_member.length == 0" class="no-more-data">
+                <ion-text>No New Members Found.</ion-text>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

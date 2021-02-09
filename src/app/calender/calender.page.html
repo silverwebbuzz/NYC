@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title no-padding>
+          <ion-grid>
+              <ion-row>
+                  <ion-col class="header_left_icons" size="2">
+                      <div class="sideMenu">
+                          <ion-buttons slot="start">
+                              <ion-menu-button></ion-menu-button>
+                          </ion-buttons>
+                      </div>
+                  </ion-col>
+                  <ion-col class="header_search-Box-text" size="9 ">
+                      <ion-text>EVENTS</ion-text>
+                  </ion-col>
+                  <!-- <ion-col class="header_right_icons"  size="1">
+                      <ion-button (click)="today()" style="margin-top: 15px; float: right;">Today</ion-button>
+                  </ion-col> -->
+              </ion-row>
+          </ion-grid>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Card for adding a new event -->
+<!-- <ion-card>
+  <ion-card-header tappable (click)="collapseCard = !collapseCard">
+    <ion-card-title>New Event</ion-card-title>
+  </ion-card-header>
+  <ion-card-content *ngIf="!collapseCard">
+
+    <ion-item>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="event.desc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>All Day?</ion-label>
+      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+    </ion-item>
+    <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Add Event</ion-button>
+
+  </ion-card-content>
+</ion-card> -->
+
+<!-- <ion-row> -->
+  <!-- Change the displayed calendar mode -->
+  <!-- <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
+  </ion-col>
+  <ion-col size="4">
+    <ion-button expand="block" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" (click)="changeMode('day')">Day</ion-button>
+  </ion-col> -->
+
+  <!-- Move back one screen of the slides -->
+  <!-- <ion-col size="2" text-left>
+    <ion-button fill="clear" (click)="back()">
+      <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  <ion-col size="8" text-center style="padding: 22px; font-weight: bolder;">
+    <ion-label>
+      {{ viewTitle }}
+    </ion-label>
+  </ion-col> -->
+
+  <!-- Move forward one screen of the slides -->
+  <!-- <ion-col size="2" text-right>
+    <ion-button fill="clear" (click)="next()">
+      <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>
+
+<div style="background: #000; color: #fff;">
+<calendar 
+[eventSource]="eventSource" 
+[calendarMode]="calendar.mode" 
+[currentDate]="calendar.currentDate"
+(onEventSelected)="onEventSelected($event)"
+(onTitleChanged)="onViewTitleChanged($event)"
+(onTimeSelected)="onTimeSelected($event)" 
+startHour="6"
+endHour="20"
+step="30"
+startingDayWeek="1"
+class="cal">
+</calendar>
+</div> -->
+
+<ion-calendar [(ngModel)]="date"
+            (change)="onChange($event)"
+            [type]="type"
+            [format]="'YYYY-MM-DD'"
+            [options]="optionsMulti"
+            style="background: #ccc;
+            color: #000"
+            (click)="open()">
+</ion-calendar>
+<!-- <div class="calendar-header">
+<ion-row class="calendar-month">
+  <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+  <ion-col col-9>{{currentMonth}} {{currentYear}}</ion-col>
+  <ion-col col-1 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+</ion-row>
+</div>
+<div class="calendar-body">
+<ion-grid>
+  <ion-row class="calendar-weekday">
+    <ion-col *ngFor="let week of weeks">{{week}}</ion-col>
+    <ion-col>Mon</ion-col>
+    <ion-col>Tue</ion-col>
+    <ion-col>Wed</ion-col>
+    <ion-col>Thu</ion-col>
+    <ion-col>Fri</ion-col>
+    <ion-col>Sat</ion-col>
+  </ion-row>
+  <ion-row class="calendar-date">
+    <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month">{{lastDay}}</ion-col>
+    <ion-col col-1 *ngFor="let day of daysInThisMonth">
+      <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+      <ng-template #otherDate class="otherDate">{{day}}</ng-template>
+    </ion-col>
+    <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay}}</ion-col>
+  </ion-row>
+</ion-grid>
+</div> -->
+</ion-content>
+
+<ion-footer>
+<ion-button expand="full" class="btn-footer" (click)="pageEvents()">Add Event</ion-button>
+</ion-footer>

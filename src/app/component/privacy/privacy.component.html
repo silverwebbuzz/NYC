@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title no-padding>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="header_left_icons" size="1">
+                    <div class="sideMenu">
+                        <ion-buttons class="back-button" slot="start">
+                            <ion-button (click)="goToBack()">
+                                <ion-icon name="arrow-back" class="header-back-icon"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                </ion-col>
+                <ion-col class="header_search-Box-text" size="9">
+                    <ion-text>Select Privacy</ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content no-padding>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="networkType">
+      <ion-list-header>
+        Privacy Selection
+      </ion-list-header>
+      <ion-item lines="full" *ngFor="let item of items">
+        <ion-radio slot="start" [value]="item.value" (click)="edit(item.value)"></ion-radio>
+        <ion-icon name="{{item.icon}}" slot="start"></ion-icon>
+        {{ item.title }}
+      </ion-item>
+    </ion-radio-group>
+    <ion-item lines="full">
+    <ion-button fill="clear" expand="full" class="btn-more">Show More</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

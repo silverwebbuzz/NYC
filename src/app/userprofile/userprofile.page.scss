@@ -1,0 +1,271 @@
+.active {
+    background: darkgray;
+}
+
+.page-user-profile {
+    --background: #f1f1f1;
+    
+    .main-card {
+        margin: 0px;
+        border-radius: 0px;
+        height: 200px;
+    }
+    .info-card {
+        box-shadow: 0px 0px 4px 0px;
+        margin-right: 8px;
+        margin-left: 8px;
+        margin-top: -30px;
+        margin-bottom: 15px;
+        padding-top: 80px;
+        background: white;
+        overflow: visible;
+        .profile-div {
+            width: 100%;
+            position: absolute;
+            top: -60px;
+            .profile-pic {
+                height: 125px;
+                width: 125px;
+                border: 4px solid #fff;
+                border-radius: 50%;
+                box-shadow: 0px 0px 4px 0px;
+                object-fit: cover;
+                margin: 0 auto;
+            }
+        }
+        .user-label {
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .header-label {
+            //color: black;
+            padding-left: 30px;
+            font-size: 14px;
+            //text-align: center;
+            width: 100%;
+            padding-right: 30px;
+            display: block;
+            margin-bottom: 5px;
+
+            .location{
+                font-weight: bold;
+            }
+        }
+        .sub-header-label {
+            //color: black;
+            font-size: 14px;
+            //text-align: center;
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .sub-header-btn {
+            padding: 0px;
+            margin: 10px 0px 0px 0px;
+            height: 80px;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            .circle-btn {
+                width: 20px;
+                height: 20px;
+                padding: 5px;
+                border-radius: 50%;
+                background: #cdd0d0;
+                margin: auto;
+                text-align: center;
+                color: #000;
+            }
+            .circle-btn-active {
+                width: 20px;
+                height: 20px;
+                padding: 5px;
+                border-radius: 50%;
+                background: #33b78b;
+                margin: auto;
+                text-align: center;
+                color: #0d6b49;
+            }
+            .circle-btn-text {
+                margin-top: 5px;
+                margin-bottom: 0px;
+                font-size: 12px;
+                color: #000;
+                font-weight: bold;
+            }
+            .circle-btn-text-active {
+                margin-top: 5px;
+                margin-bottom: 0px;
+                font-size: 12px;
+                color: #0d6b49;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .post-card {
+        margin: 0px 8px 0px 8px;
+        border-radius: 0;
+        border: 1px solid #5d5e5e;
+
+        .video-area {
+            padding: 10px;
+            background: #fff;
+
+            .video-url-input {
+                border: solid 1px #5d5e5e;
+                padding-inline-start: 10px !important;
+                color: #000;
+            }
+        }
+        .post-area {
+            padding-left: 16px;
+            background: #fff;
+            color: #000;
+        }
+        .photo-area {
+            background: #fff;
+            .photo-header {
+                padding: 5px;
+                width: 100%;
+                font-size: 16px;
+                color: black;
+                display: inline-block;
+                text-align: center;
+            }
+            .photo-desc {
+                padding: 5px;
+                text-align: center;
+                width: 100%;
+                display: inline-block;
+            }
+        }
+        .post-area-btn {
+            --background: #ccc;
+            --min-height: 25px;
+            --padding-start: 5px;
+
+            .privacy-btn {
+                color: black;
+                margin: 0px;
+                .privacy-btn-icon {
+                    margin-right: 5px;
+                }
+            }
+            .end-btn {
+                --border-radius: 0;
+                margin: 3px 5px 3px 3px;
+            }
+        }
+    }
+    .detail-card{
+        padding: 10px 10px 0px 10px; 
+        background: #fff; 
+        margin: 8px 8px 8px 8px; 
+        border-radius: 0;
+
+        .main-header{
+            font-weight: bold; 
+            font-size: larger;
+
+            .btn-edit{
+                padding: 0px; 
+                margin: 0px; 
+                float: right;
+            }
+        }
+
+        .hr_line{
+            border: 0.5px solid #ccc; 
+            margin-top: 8px;
+        }
+
+        .detail-row{
+            margin-top: 8px;
+
+            .user-img{
+                height: 40px; 
+                width: 40px; 
+                object-fit: cover; 
+                border-radius: 50%;
+            }
+
+            .user-details{
+
+                .user-title{
+                    font-weight: 500; 
+                    font-size: 16px; 
+                    margin: 2px;
+                }
+                .user-title-light{
+                    font-weight: 300; 
+                    font-size: 15px; 
+                    margin: 2px;
+                }
+                .user-subtitle{
+                    font-weight: 500; 
+                    font-size: 15px; 
+                    margin: 2px;
+                }
+                .user-desc{
+                    font-size: 14px; 
+                    margin: 3px;
+                }
+                .user-likes{
+                    font-size: 13px; 
+                    margin: 3px;
+                }
+            }
+        }
+
+    }
+}
+.feed-post{
+    --background: #fff; 
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: #5d5e5e;
+    margin-left: 8px;
+    margin-right: 8px;
+   
+    .btn-attach{
+        --padding-start: 10px;
+        --padding-end: 10px;
+        font-size: 15px;
+        -webkit-margin-start: 0px;
+        margin-inline-start: 0px;
+        -webkit-margin-end: 0px;
+        margin-inline-end: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #5d5e5e; 
+        font-size: 25px;
+    }
+}
+
+.common{
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    //text-align: center;
+    //display: inline-block;
+
+    .badges{
+        height: 30px; 
+        width: 30px; 
+        margin-right: 3px;
+        display: inline-block;
+    }
+}
+
+.spc-badges{
+    margin-top: 5px !important;
+    margin-right: 5px !important; 
+}

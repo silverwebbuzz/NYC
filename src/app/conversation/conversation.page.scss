@@ -1,0 +1,113 @@
+.sideMenu{
+    margin-top: 14px;
+}
+.header-profile-img{
+    margin-top: 14px; 
+    width:30px; 
+    height:30px; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+.header_search-Box-text {
+    line-height: 58px;
+    font-size: 22px;
+
+    .header-username{
+        text-align: left; 
+        display: block;        
+    }
+}
+.modal-components{
+
+    --background: #cce8d9;
+
+    .row-receiver{
+        margin: 10px;
+
+        .label-receiver{
+            padding: 10px; 
+            background: #fff; 
+            border: 1px solid #fff; 
+            border-radius: 0px 8px 8px 8px;
+        }
+    }
+    .row-sender{
+        margin: 10px; 
+        float: right; 
+        width: 100%; 
+        display: block;
+
+        .label-sender{
+            padding: 10px; 
+            float: right; 
+            background: #addcad; 
+            border: 1px solid #addcad; 
+            border-radius: 8px 0px 8px 8px;
+        }
+    }
+}
+
+.component-footer{
+
+    .hr{
+        border: 0.5px solid #ccc; 
+        margin-bottom: 5px;
+    }
+
+    .footer-item{
+        --padding-start: 0px; 
+        padding-bottom: 5px;
+
+        .profile-img{
+            height: 45px; 
+            width: 45px;
+        }
+
+        .input-area-btn{
+            border: 1px solid #ccc; 
+            width: 100%; 
+            margin-left: 8px; 
+            position: relative;
+
+        .input-area{
+            --padding-start: 5px; 
+            --padding-end: 38px;
+            font-size: 12px;
+
+        }
+
+            .btn-input{
+                position: absolute; 
+                bottom: 0; 
+                right: 0;
+                z-index: 9999;
+                --padding-start: 0px;
+                --padding-end: 0px;
+                margin-right: 1px;
+
+                .icon{
+                    height: 30px;
+                    width: 30px;
+                }
+            }    
+        }
+
+        .btn-clear{
+            --border-radius: 0px; 
+            font-size: 14px; 
+            height: 34px; 
+            margin-left: 5px; 
+            --padding-start: 8px; 
+            --padding-end: 8px;
+        }
+
+        .btn-post{
+            --border-radius: 0px; 
+            font-size: 14px; 
+            margin-left: 5px; 
+            height: 34px; 
+            --padding-start: 8px; 
+            --padding-end: 8px;
+        }
+    }
+}

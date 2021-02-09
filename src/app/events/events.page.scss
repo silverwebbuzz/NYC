@@ -1,0 +1,61 @@
+.item-head{
+    --background: #f1f1f1;
+    font-weight: bold;
+}
+
+// Input Field
+.input-item{
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+    --background-activated: transparent;
+    --background-focused: transparent;
+
+    .input-lbl{
+        font-weight: normal;
+    }
+    .input-box{
+        //background: #f1f1f1;
+        //font-style: italic;
+        border: 0.5px solid #ccc;
+        --padding-start: 8px !important;
+    }
+}
+
+// Dropdown
+.item-dropdown{
+    --padding-start: 16px; 
+    --inner-padding-end: 16px;
+    --background-activated: transparent;
+    --background-focused: transparent;
+ 
+    .lbl-dropdown{
+         //font-size: 13px;
+         font-weight: bold;
+    }
+    .btn-select{
+        --padding-end: 16px;
+        --padding-start: 8px;
+        border: 0.5px solid #ccc;
+        //font-size: 13px;
+        //color: #00aeef;
+    }
+}
+
+.add{
+    padding-top: 8px;
+}
+.marginR{
+    margin-right: 1%;
+}
+.marginL{
+    margin-left: 1%;
+}
+.box{
+    width: 49%;
+}
+.lbl-style{
+    font-style: italic;
+}
+.lbl-weight{
+    font-weight: bold;
+}

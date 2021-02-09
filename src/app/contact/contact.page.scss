@@ -1,0 +1,55 @@
+.page-edit-account{
+
+    
+    .list-form {
+        padding: 16px;
+        .login-icon {
+            position: absolute;
+            bottom: 0;
+        }
+        .login-text-white {
+            margin-left: 40px;
+        }
+        .login-input {
+            margin-left: 80px;
+        }
+        .validator-error {
+            p {
+                color: red;
+            }
+        }
+        .login-forgot-btn {
+            color: #fff;
+        }
+         :host {
+            .login-button {
+                --background: mediumseagreen;
+                color: white;
+            }
+        }
+}
+.clr-toolbar{
+    color: white;
+}
+
+.header-ios ion-toolbar:last-child {
+    --border-width: 0 0 0 0px;
+}
+
+:host{
+    ion-item{
+        width: 100%;
+        color: #fff;
+        //--ion-background-color: none;   
+    }
+    .item-native{
+        padding-left: 0px;
+    }
+}
+}
+.add-label{
+    width: 100%;
+    color: #000;
+    display: block;
+    font-size: 16px;
+}

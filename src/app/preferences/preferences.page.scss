@@ -1,0 +1,38 @@
+.page-preferences{
+    --background: #f1f1f1;
+
+    .main-header{
+        background: lightgrey;
+        display: block;
+        padding: 8px;
+        font-weight: bold;
+    }
+    .header{
+        display: block;
+        padding: 8px;
+        font-weight: bold;
+    }
+    .items{
+        display: block;
+        background: #fff;
+        padding: 8px;
+    }
+    .btn-privacy{
+        margin: 8px;
+        --border-radius: 0px;
+        --padding-start: 0.5em;
+        --padding-end: 0.5em;
+    }
+    .check-items{
+        --padding-start: 8px;
+
+        .check-label{
+            white-space: normal;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "nycwn",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,114 @@
+.modal-components{
+
+    .spc{
+        margin-left: 48px;
+    }
+
+    .profile-img{
+        height: 45px; 
+        width: 45px;
+        border-radius: 50%;
+    }
+
+    .profile-img-rly{
+        height: 35px; 
+        width: 35px;
+    }
+
+    .user-label{
+        width: 100%; 
+        font-weight: 500;
+    }
+
+    .comments-label{
+        font-size: 14px; 
+        width: 100%;
+    }
+
+    .img-div{
+        width: 100%; 
+        margin-top: 5px;
+
+        .img-card{
+            height: 100px; 
+            width: 100px;
+        }
+    }
+
+    .time-label{
+        font-size: 14px; 
+        margin-top: 9px;
+    }
+
+    .btn-like{
+        margin: 0px; 
+        height: 2.0em;
+    }
+
+    .btn-reply{
+        margin: 0px; 
+        height: 2.0em; 
+        --padding-start: 0px;
+    }
+}
+
+.component-footer{
+
+    .hr{
+        border: 0.5px solid #ccc; 
+        margin-bottom: 5px;
+    }
+
+    .footer-item{
+        --padding-start: 5px; 
+        padding-bottom: 5px;
+       
+
+        .profile-img{
+            height: 40px; 
+            width: 40px;
+        }
+
+        .input-area-btn{
+            border: 1px solid #ccc; 
+            width: 100%; 
+            margin-left: 8px; 
+            position: relative;
+
+        .input-area{
+            --padding-start: 5px; 
+            font-size: 12px;
+            --padding-end: 45px;
+        }
+
+            .btn-input{
+                position: absolute; 
+                bottom: 0; 
+                right: 0;
+                z-index: 9999;
+
+                .icon{
+                    height: 30px;
+                    width: 30px;
+                }
+            }    
+        }
+
+        .btn-clear{
+            --border-radius: 0px; 
+            font-size: 14px; 
+            height: 34px; 
+            margin-left: 5px; 
+            --padding-start: 8px; 
+            --padding-end: 8px;
+        }
+
+        .btn-post{
+            --border-radius: 0px; 
+            font-size: 14px; 
+            height: 34px; 
+            --padding-start: 8px; 
+            --padding-end: 8px;
+        }
+    }
+}

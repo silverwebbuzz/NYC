@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar color="primary" text-center>
+      <ion-buttons slot="start">
+        <ion-button fill="clear" class="btn-close" (click)="closeModal()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        Replies
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="modal-components">
+
+      <ion-row>
+          <ion-col size="2">
+              <img [src]="preComment.avtar" class="profile-img"/>
+          </ion-col>
+          <ion-col size="10"> 
+              <ion-row>
+                  <ion-label class="user-label">
+                      {{preComment.username}} 
+                  </ion-label>
+                  <ion-label class="comments-label">
+                      {{preComment.content}}
+                    </ion-label>
+                    <div class="img-div" *ngIf="preComment.peepso_photo_comments != null">
+                      <img [src]="preComment.peepso_photo_comments.m_s" class="img-card" />
+                    </div>
+                      <ion-label class="time-label">{{preComment.activity_date}}</ion-label>
+                      <ion-button fill="clear" class="btn-like" (click)="showReactions($event)">Like</ion-button>
+                      <ion-button fill="clear" class="btn-reply"  (click)="clickbtnHide()">Reply</ion-button>
+                  </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <!-- <div *ngIf="posts.length === 0" >
+            <p text-center style="font-size:18px !important;">
+                Your Comment Box is empty
+            </p>
+        </div> -->
+        
+        <ion-row class="spc" *ngFor="let post of posts">
+          <ion-col size="2">
+            <img [src]="post.avatar" class="profile-img" />
+          </ion-col>
+          <ion-col size="10">
+            <ion-row>
+              <ion-label class="user-label">
+                {{post.author.username}}
+              </ion-label>
+              <ion-label class="comments-label">
+                {{post.content}}
+              </ion-label>
+              <div class="img-div" *ngIf="post.peepso_photo_comments != null">
+                <img [src]="post.peepso_photo_comments.m_s" class="img-card" />
+              </div>
+              <ion-label class="time-label">{{post.activity}}</ion-label>
+              <ion-button class="btn-like" fill="clear" (click)="showReactions($event)">Like</ion-button>
+              <ion-button (click)="clickbtnHide()" class="btn-reply" fill="clear">Reply</ion-button>
+            </ion-row>
+          </ion-col>
+          </ion-row>
+  </ion-content>
+
+  <ion-footer class="component-footer">
+      <div class="hr"></div>
+
+      <ion-item lines="none" class="footer-item">
+          <img [src]="user_url" class="profile-img"  style="border-radius: 50%;" (click)="goToProfile()"/>
+
+          <div class="input-area-btn">
+          <ion-textarea rows="1" (click)="clickbtnHide()" [(ngModel)]="newmessage" placeholder="Write a reply..." class="input-area" #replayCommentbox></ion-textarea>
+          <ion-button fill="clear" (click)="openGallery()" class="btn-input" >
+            <ion-icon name="camera" class="icon"></ion-icon>
+          </ion-button>
+          </div>
+
+          <ion-button *ngIf="postBtnHide" (click)="cancelWritePost()" class="btn-clear">
+            Clear
+          </ion-button>
+          <ion-button *ngIf="postBtnHide" class="btn-post" (click)="submitWritePost()">
+            Post
+          </ion-button>
+      </ion-item>
+    </ion-footer>

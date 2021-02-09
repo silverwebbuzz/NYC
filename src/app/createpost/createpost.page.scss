@@ -1,0 +1,60 @@
+.modal-createpost{
+
+    .profile{
+        margin: 0px; 
+        border-radius: 0px;
+
+        .profile-img{
+            height: 45px; 
+            width: 45px; 
+            border-radius: 50%; 
+            object-fit: cover;
+        }
+
+        .btn{
+            margin: 0px;
+            --padding-start: 6px;
+            height: 2.0em;
+        }
+    }
+
+
+.box{
+    box-shadow: 0px 0px 0px 1px #333;
+    padding:5px;
+}
+
+.photo-area{
+    margin: 0px; 
+    border-radius: 0px; 
+    padding: 5px;
+
+    .photo-area-img{
+        height: 200px; 
+        width: 100%;
+    }
+}
+
+.video-area {
+    padding: 10px;
+    margin: 5px;
+    background: #fff;
+    border: 1px solid #5d5e5e;
+    
+    .video-url-input {
+        --padding-top: 0px;
+        --padding-end: 0px;
+        --padding-bottom: 0px;
+        }
+    }
+}
+
+.footer-createpost{
+    .hr_line{
+        border: 0.5px solid #ccc;
+    }
+
+    .btn-post{
+        margin: 0px;
+    }
+}

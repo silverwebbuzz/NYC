@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" style="color: #000;" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Terms/policy
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="tab-toolbar">
+      <ion-segment [(ngModel)]="tabs" color="medium">
+          <ion-segment-button value="terms" class="tab-btn">
+              <ion-label>Terms & Condition</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="policy" class="tab-btn">
+              <ion-label>Privacy & Policy</ion-label>
+          </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div [ngSwitch]="tabs">
+      <div *ngSwitchCase="'terms'">
+        <div [innerHTML]="html_content_terms"></div>
+      </div>
+      <div *ngSwitchCase="'policy'">
+          <div [innerHTML]="html_content_policy"></div>
+        </div>
+    </div>
+
+</ion-content>
